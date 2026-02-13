@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Array {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] mk = {
+            "Pancasila",
+            "KTI",
+            "CTPS",
+            "Matdas",
+            "Bahasa Inggris",
+            "Daspro",
+            "Praktikum Daspro",
+            "K3 "
+        };
+
+        double[] nilaiAngka = new double[mk.length];
+        String[] nilaiHuruf = new String[mk.length];
+        double[] bobot = new double[mk.length];
+
+        System.out.println("Program Menghitung IP Semester");
+        System.out.println("==============================");
+
+        for (int i = 0; i < mk.length; i++) {
+            System.out.print("Masukkan nilai Angka untuk MK " + mk[i] + ": ");
+            nilaiAngka[i] = sc.nextDouble();
+
+            if (nilaiAngka[i] >= 80) {
+                nilaiHuruf[i] = "A";
+                bobot[i] = 4.0;
+            } else if (nilaiAngka[i] >= 73) {
+                nilaiHuruf[i] = "B+";
+                bobot[i] = 3.5;
+            } else if (nilaiAngka[i] >= 65) {
+                nilaiHuruf[i] = "B";
+                bobot[i] = 3.0;
+            } else if (nilaiAngka[i] >= 60) {
+                nilaiHuruf[i] = "C+";
+                bobot[i] = 2.5;
+            } else if (nilaiAngka[i] >= 50) {
+                nilaiHuruf[i] = "C";
+                bobot[i] = 2.0;
+            } else if (nilaiAngka[i] >= 39) {
+                nilaiHuruf[i] = "D";
+                bobot[i] = 1;
+            }  else {
+                nilaiHuruf[i] = "E";
+                bobot[i] = 0;
+            }
+        }
+
+        System.out.println("==============================");
+        System.out.println("Hasil konversi nilai");
+
+        System.out.printf("%-35s %-12s %-12s %-12s\n", "MK", "Nilai Angka", "Nilai Huruf", "Bobot Nilai");
+
+        double totalBobot = 0;
+        int totalMK = mk.length;
+
+        for (int i = 0; i < mk.length; i++) {
+            System.out.printf("%-35s %-12.2f %-12s %-12.2f\n", mk[i], nilaiAngka[i], nilaiHuruf[i], bobot[i]);
+            totalBobot += bobot[i];
+        }
+
+        double ip = totalBobot / totalMK;
+
+        System.out.println("==============================");
+        System.out.printf("IP : %.2f\n", ip);
+
+        sc.close();
+    }
+}
