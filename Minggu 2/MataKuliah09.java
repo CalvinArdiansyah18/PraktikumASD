@@ -9,17 +9,6 @@ public class MataKuliah09 {
         System.out.println("Jumlah Jam: " + jumlahJam);
     }
 
-    public MataKuliah09(){
-        
-    }
-
-    public MataKuliah09(String kodeMk, String nama, int sks, int jumlahJam){
-        this.kodeMK = kodeMk;
-        this.nama = nama;
-        this.sks = sks;
-        this.jumlahJam = jumlahJam;
-    }
-
     void ubahSKS(int sksBaru){
         sks = sksBaru;
         System.out.println("SKS sudah diubah");
@@ -37,5 +26,16 @@ public class MataKuliah09 {
         } else {
             System.out.println("Tidak bisa dikurangi karena jumlah jam kurang");
         }
+    }
+
+    public MataKuliah09(){
+        
+    }
+
+    public MataKuliah09(String kodeMk, String nama, int sks, int jumlahJam){
+        this.kodeMK = kodeMk;
+        this.nama = nama;
+        this.sks = sks;
+        this.jumlahJam = jumlahJam;
     }
 }
