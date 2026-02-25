@@ -20,7 +20,7 @@ public class Dosen09 {
         System.out.println("Nama: " + nama);
         System.out.println("Bidang Keahlian: " + bidangKeahlian);
         System.out.println("Tahun Bergabung: " + tahunBergabung);
-        System.out.println("Status aktif: " + (statusAktif ? "AKtif" : "Tidak aktif"));
+        System.out.println("Status aktif: " + (statusAktif ? "AKtif" : "Tidak Aktif"));
     }
 
     void setStatusAktif(boolean statusAktif) {
