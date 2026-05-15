@@ -56,10 +56,26 @@ public class StackTugasMahasiswa09 {
         }
     }
 
+    // Perbaikan kode agar keluaran sama seperti di jobsheet
     public void print() {
-        for (int i = 0; i <= top; i--) { 
+        for (int i = top; i >= 0; i--) {
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
         }
         System.out.println("");
+    }
+
+    // Modifikasi nomor 4
+    public Mahasiswa09 peekBottom() {
+        if (!isEmpty()) {
+            return stack[0];
+        } else {
+            System.out.println("Stack kosong!");
+            return null;
+        }
+    }
+
+    // Modifikasi nomor 5
+    public int hitungJumlah() {
+        return top + 1;
     }
 }
